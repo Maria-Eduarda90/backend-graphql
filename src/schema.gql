@@ -3,6 +3,10 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type Mutation {
+  createUser(email: String!, name: String!, password: String!): User!
+}
+
 type Query {
   users: [User!]!
 }
