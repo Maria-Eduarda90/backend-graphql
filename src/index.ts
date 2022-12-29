@@ -7,7 +7,7 @@ async function main(){
     });
 
     const { url } = await server.listen();
-    console.log(`server running on ${url}`)
+    console.log(`server running on ${url}`);
 }
 
-main()
+main();
