@@ -1,7 +1,15 @@
+import "reflect-metadata";
 import { ApolloServer } from 'apollo-server';
-import { schema } from './schema/schema';
+import path from "path";
+import { buildSchema } from "type-graphql";
+import { UserResolver } from "./resolvers/UserResolver";
 
 async function main(){
+    const schema = await buildSchema({
+      resolvers: [UserResolver],
+      emitSchemaFile: path.resolve(__dirname, "schema.gql"),
+    });
+
     const server = new ApolloServer({
         schema
     });
